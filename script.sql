@@ -1,15 +1,28 @@
 DO
 $$
 DECLARE 
-	valor INT;
+	valor INT := fn_valor_aleatorio_entre(1,100);
 BEGIN
-	valor := fn_valor_aleatorio_entre(1,10);
-	RAISE NOTICE 'O valor gerado fii %', valor;
-	IF valor < 20 THEN
-		RAISE NOTICE 'Sim, % é menor ou igual a 20',valor;
+	IF valor % 2 = 0 THEN
+		RAISE NOTICE '% é par',valor;
+	ELSE
+		RAISE NOTICE '% é impar1',valor;
 	END IF;
 END;
 $$
+
+-- DO
+-- $$
+-- DECLARE 
+-- 	valor INT;
+-- BEGIN
+-- 	valor := fn_valor_aleatorio_entre(1,10);
+-- 	RAISE NOTICE 'O valor gerado fii %', valor;
+-- 	IF valor < 20 THEN
+-- 		RAISE NOTICE 'Sim, % é menor ou igual a 20',valor;
+-- 	END IF;
+-- END;
+-- $$
 
 -- SELECT fn_valor_aleatorio_entre(2,5);
 
